@@ -1,0 +1,13 @@
+<h1>click on heart</h1>
+<button (click)="onClick()" style="font-size:20px">
+    <i class={{getClass()}} style="font-size:20px"></i>
+</button>
+
+<!--
+  Below is Using Class binding method
+-->
+<span 
+class="bi" 
+[class.bi-bookmark-heart-fill]="flag"
+[class.bi-bookmark-heart]="!flag"
+></span>

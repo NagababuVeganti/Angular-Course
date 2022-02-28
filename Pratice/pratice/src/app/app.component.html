@@ -473,8 +473,29 @@
 <!--
 <app-course></app-course>
 -->
+
+<!--
+
 <app-title-pipe></app-title-pipe>
-<app-bookmark-hear></app-bookmark-hear>
+<app-bookmark-hear [flag]="post.flag" (change)="onFavoriteChange($event)"></app-bookmark-hear>
+
+<app-like-component [numLiked]="post.numLiked"  (notify)="UpdateCount($event)"></app-like-component>
+<app-like-component1 [numLiked]="post.numLiked" (notify)="UpdateCount($event)"></app-like-component1>
+<app-course></app-course>
+-->
+
+<input type="text" appInputForamt/>
+
+<!--
+<app-bootstrap-panel>
+  <div class="card-title">Heading</div>
+  <div class="card-subtitle">Sub-Heading</div>
+</app-bootstrap-panel>
+<app-course></app-course>
+-->
+<app-zippy [sectionType]="BillingSection"></app-zippy>
+<app-zippy [sectionType]="ShippingSection"></app-zippy>
+
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -485,4 +506,5 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
+<router-outlet>
+</router-outlet>

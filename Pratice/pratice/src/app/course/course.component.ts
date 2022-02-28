@@ -7,29 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseComponent implements OnInit {
 
+  index=4
   course1 =[
   {
     title:"DIS",
-    price:2794,
-    professor:"Manish Agarwal skdfkjd sdkfjksd sakdfkajdfjdfjsfkj salfdjilieriety cnc  skdjafkadjfjafdgndnvvadn;arioo JJDM,VSZDJFHKARLANSCN",
-    releaseDate:new Date()
   },
 
   {
     title:"QMB",
-    price:2652,
-    professor:"Clinton",
-    releaseDate:new Date()
   },
   {
     title:"Data bases",
-    price:200,
-    professor:"Bernt",
-    releaseDate:new Date()
   }
-
-
 ]
+OnAdd()
+{
+this.course1.push({title:"course"+this.index});
+this.index+=1;
+}
+
+OnRemove(course: { title: string; })
+{
+let index=this.course1.indexOf(course);
+this.course1.splice(index,1);
+}
 
   ngOnInit(): void {
   }

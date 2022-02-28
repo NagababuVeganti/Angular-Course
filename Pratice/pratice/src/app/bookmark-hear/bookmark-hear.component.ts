@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, Output ,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-bookmark-hear',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bookmark-hear.component.css']
 })
 export class BookmarkHearComponent implements OnInit {
-  flag=false
+  @Input() flag:boolean=false;
+  @Output() change= new EventEmitter();
   onClick()
   {
     this.flag=!this.flag
+    this.change.emit(this.flag);
+    // we can also pass objects also in emit function.
+    //this.change.emit({newValue:this.flag})
+
   }
   getClass()
   {

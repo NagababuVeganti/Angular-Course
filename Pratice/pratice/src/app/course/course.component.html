@@ -1,11 +1,19 @@
 <!--
     Use of Pipe 
 -->
+<div *ngIf="course1.length>0; else nothing ">
+<ul>
+    <li *ngFor="let c of course1">{{c?.title}}</li>
+</ul>
+</div>
+<ng-template #nothing>
+    Nothing is offered
+</ng-template>
+
+<button (click)="OnAdd()">Add Course</button>
+<div>
 <h1>Courses offered</h1>
 <ul *ngFor="let c of course1">
-    <li>{{c.title| uppercase}}</li>
-    <li>{{c.price}}</li>
-    <li>{{c.professor |summary:25}}</li>
-    <li>{{c.releaseDate}}</li>
+    <li>{{c.title| uppercase}}</li> <button (click)="OnRemove(c)">Remove</button>
 </ul>
-
+</div>

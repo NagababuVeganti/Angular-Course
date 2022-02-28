@@ -13,6 +13,11 @@ import { SummaryPipe } from './summary.pipe';
 import { BookmarkHearComponent } from './bookmark-hear/bookmark-hear.component';
 import { TitlePipeComponent } from './title-pipe/title-pipe.component';
 import { FormsModule } from '@angular/forms';
+import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
+import { LikeComponentComponent } from './like-component/like-component.component';
+import { LikeComponent1Component } from './like-component1/like-component1.component';
+import { InputForamtDirective } from './input-foramt.directive';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { FormsModule } from '@angular/forms';
     AuthorsComponent,
     SummaryPipe,
     BookmarkHearComponent,
-    TitlePipeComponent
+    TitlePipeComponent,
+    BootstrapPanelComponent,
+    LikeComponentComponent,
+    LikeComponent1Component,
+    InputForamtDirective,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,

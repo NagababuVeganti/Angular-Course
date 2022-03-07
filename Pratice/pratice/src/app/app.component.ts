@@ -15,6 +15,7 @@ export class AppComponent {
   BillingSection='Billing section';
   ShippingSection="ShippingSection";
   viewModel="Active";
+  
   UpdateCount(flag:boolean)
   {
     flag?this.post.numLiked+=1:this.post.numLiked-=1

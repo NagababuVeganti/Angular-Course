@@ -18,7 +18,12 @@ import { LikeComponentComponent } from './like-component/like-component.componen
 import { LikeComponent1Component } from './like-component1/like-component1.component';
 import { InputForamtDirective } from './input-foramt.directive';
 import { ZippyComponent } from './zippy/zippy.component';
-
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { FormExerciseComponent } from './form-exercise/form-exercise.component';
+import {SignupFormComponent} from './signup-form/signup-form.component'
+import { FormGroup,FormControl,ReactiveFormsModule } from '@angular/forms';
+import { FormControlGroupArrayComponent } from './form-control-group-array/form-control-group-array.component';
+import { FormChangePasswordComponent } from './form-change-password/form-change-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,12 +37,18 @@ import { ZippyComponent } from './zippy/zippy.component';
     LikeComponentComponent,
     LikeComponent1Component,
     InputForamtDirective,
-    ZippyComponent
-  ],
+    ZippyComponent,
+    ContactFormComponent,
+    FormExerciseComponent,
+    SignupFormComponent,
+    FormControlGroupArrayComponent,
+    FormChangePasswordComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CoursesService,AuthorsService],
   bootstrap: [AppComponent]

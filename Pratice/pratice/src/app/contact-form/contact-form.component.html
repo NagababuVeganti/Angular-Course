@@ -1,0 +1,43 @@
+
+<!--
+
+    Template Driven forms
+
+    when you add ngModel to the input tag it will internally create a formcontrol for that field, and when you use 
+    ngModel for input tag name attribute is mandatory.
+
+    NgModel is accessed with the attribute name that we assigned to.
+
+    value of the option attribute can only hold string it cannot hold custom attribute value.
+
+    [ngValue]  its attribute directive,  it can hold custom object value.
+
+-->
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+        <label for="courseName">Course Name</label><br>
+        <input  minlength="5" required ngModel name="courseName" id="courseName" #courseName="ngModel" (change)="log(courseName)" type="text" class="from-control">
+        <div class="alert alert-danger" *ngIf="courseName.touched  &&!courseName.valid">First Name is reuqired</div>
+        <div class="alert alert-danger" *ngIf="courseName.touched  &&!courseName.valid">Course should have min length of</div>
+    </div>
+    <div class="form-group">
+        <label for="comment">Comments</label><br>
+        <textarea name="" id="comment" cols="30" rows="10" class="from-control"></textarea>
+    </div>
+    <div class="checkbox">
+        <label for="">
+            <input type="checkbox" ngModel name="isSubscribed">Subscribe to Mail list
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label for="contactMethod">Contact Method</label>
+        <select ngModel name="contactMethod" id="contactMethod" class="form-control">
+            <option  *ngFor=" let method of contactMethods" [value]="method">{{method}}</option>
+        </select>
+    </div>
+    <p>
+        {{f.value | json}}
+    </p>
+    <button class="btn btn-primary">Submit</button><br>
+</form>

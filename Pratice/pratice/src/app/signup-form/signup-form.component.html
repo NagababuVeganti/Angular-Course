@@ -1,0 +1,38 @@
+<!--
+
+    From angular version 14 accessing erros for form changed little bit
+    form.get('username')?.errors?.required
+                (to)
+    form.get('username')?.errors?.['required']
+-->
+
+<form [formGroup]="formgroups" (ngSubmit)="Login()"> 
+    <div formGroupName="account">  
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input 
+                formControlName="username"
+                minlength="3"
+                maxlength="10"
+                id="username" 
+                type="text" 
+                class="form-control">
+            <div  *ngIf="formgroups.get('account.username')?.touched && formgroups.get('account.username')?.pending" class="alert alert-danger">C   hecking for Uniqueness</div>
+            <div  *ngIf="formgroups.get('account.username')?.touched && formgroups.get('account.username')?.errors?.['required']" class="alert alert-danger">Invalid user Name</div>
+            <div  *ngIf="formgroups.get('account.username')?.touched && formgroups.get('account.username')?.errors?.['minlength']" class="alert alert-danger">Invalid user Name Length</div>
+            <div  *ngIf="formgroups.get('account.username')?.touched && formgroups.get('account.username')?.errors?.['cannotContainSpace']" class="alert alert-danger">Cannot have space.</div>
+            <div  *ngIf="formgroups.get('account.username')?.touched && formgroups.get('account.username')?.errors?.['shouldBeUnique']" class="alert alert-danger">User Name is Taken Already.</div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                formControlName="password"
+                id="password" 
+                type="text" 
+                class="form-control">
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+    <div  *ngIf="form.errors" class="alert alert-danger">Invalid login</div>
+
+</form>

@@ -1,0 +1,11 @@
+<h1>My Followers:</h1>
+<div class="block" *ngFor="let person of followers">
+    <div style="display:inline-block">
+        <img [src]="person.avatar_url" alt="Error">
+    </div>
+
+    <div class="content" style="display:inline-block">
+        <h2><a [routerLink]="['/follwer',person.id]" [queryParams]="{page:1, order:'newest'} "><h2>{{person.login}}</h2></a></h2>
+        <a [href]="person.url"><p>{{person.url}}</p></a>
+    </div>
+</div>

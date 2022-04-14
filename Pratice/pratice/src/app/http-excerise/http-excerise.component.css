@@ -1,0 +1,15 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+img {
+    height: 120px;
+    width: 120px;
+    border-radius: 60%;     
+}
+.content
+{
+    padding-left: 10px;
+}
+.block
+{
+    padding-top: 15px;
+}

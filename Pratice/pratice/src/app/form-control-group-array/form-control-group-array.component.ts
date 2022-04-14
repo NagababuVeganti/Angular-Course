@@ -36,6 +36,7 @@ export class FormControlGroupArrayComponent implements OnInit {
     }),
     topics: new FormArray([])
   });
+  
   getControls() {
     return (this.formbuilder.get('topics') as FormArray).controls;
   }

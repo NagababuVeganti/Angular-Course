@@ -13,11 +13,13 @@ export class FormChangePasswordComponent implements OnInit {
   constructor() { 
     
   }
+
   form=new FormGroup({
     oldPassword:new FormControl('',[Validators.required,PasswordValidator.checkOldPassword]),
     newPassword: new FormControl('',[Validators.required],PasswordValidator.checkNewPassword),
     confirmPassword: new FormControl('',[Validators.required])
   })
+  
   storePassword(oldpass1:string)
   {
       this.oldpass=oldpass1;
